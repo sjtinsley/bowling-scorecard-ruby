@@ -32,5 +32,23 @@ describe Frame do
       frame.add_roll(9)
       expect(frame.is_spare?).to be true
     end
+
+    it 'returns false if the frame is not a spare' do
+      frame.add_roll(10)
+      expect(frame.is_spare?).to be false
+    end
+  end
+
+  describe '#is_strike?' do
+    it 'returns true if the frame is a strike' do
+      frame.add_roll(10)
+      expect(frame.is_strike?).to be true
+    end
+
+    it 'returns false if the frame is not a strike' do
+      frame.add_roll(1)
+      frame.add_roll(8)
+      expect(frame.is_strike?).to be false
+    end
   end
 end

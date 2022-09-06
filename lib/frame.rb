@@ -20,4 +20,8 @@ attr_reader :frame_rolls
   def is_spare?
     @frame_rolls.sum == 10 && @frame_rolls.length == 2
   end
+
+  def is_strike?
+    @frame_rolls.first == 10
+  end
 end
