@@ -16,4 +16,8 @@ attr_reader :frame_rolls
   def first_roll_score
     @frame_rolls.first
   end
+
+  def is_spare?
+    @frame_rolls.sum == 10 && @frame_rolls.length == 2
+  end
 end

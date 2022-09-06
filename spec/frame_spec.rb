@@ -25,4 +25,12 @@ describe Frame do
       expect(frame.first_roll_score).to eq(2)
     end
   end
+
+  describe '#is_spare?' do
+    it 'returns true if the frame is a spare' do
+      frame.add_roll(1)
+      frame.add_roll(9)
+      expect(frame.is_spare?).to be true
+    end
+  end
 end
