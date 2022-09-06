@@ -9,4 +9,7 @@ attr_reader :frame_rolls
     @frame_rolls << pins
   end
 
+  def sum_pins
+    @frame_rolls.sum
+  end
 end
