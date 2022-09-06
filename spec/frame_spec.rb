@@ -17,4 +17,12 @@ describe Frame do
       expect(frame.sum_pins).to eq(7)
     end
   end
+
+  describe '#first_roll_score' do
+    it 'returns the first roll score of the frame' do
+      frame.add_roll(2)
+      frame.add_roll(5)
+      expect(frame.first_roll_score).to eq(2)
+    end
+  end
 end

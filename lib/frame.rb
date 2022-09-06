@@ -12,4 +12,8 @@ attr_reader :frame_rolls
   def sum_pins
     @frame_rolls.sum
   end
+
+  def first_roll_score
+    @frame_rolls.first
+  end
 end
