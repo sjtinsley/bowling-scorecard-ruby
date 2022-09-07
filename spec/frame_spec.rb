@@ -1,7 +1,7 @@
 require 'frame'
 
 describe Frame do
-  let (:frame) {Frame.new}
+  let (:frame) { Frame.new }
 
   describe '#add_roll' do
     it 'adds the score of the roll to the frame' do
