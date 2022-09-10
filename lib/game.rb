@@ -6,40 +6,7 @@ class Game
 
   def initialize
     @frames = []
-    @rolls = []
     @roll_index = 0
-  end
-
-  def new_frame?
-    @roll_index.even?
-  end
-
-  def game_finished?
-    if @frames.length > 10
-      true
-    elsif @frames.length == 10 && @frames.last.sum_pins != 10
-      true
-    else
-      false
-    end
-  end
-
-  def bonus_strike?
-    @frames.length == 10 && @frames.last.is_strike? ? true :  false
-  end
-
-  def bonus_spare?
-    @frames.length == 10 && @frames.last.is_spare? ? true :  false
-  end
-
-  def add_empty_frame
-    @frame = Frame.new
-    @frame.zero_frame
-    @frames << @frame
-  end
-
-  def is_regular_strike?(pins)
-    new_frame? && pins == 10 && @frames.length < 10 ? true : false
   end
 
   def roll(pins, frame = Frame)
@@ -69,9 +36,11 @@ class Game
       @roll_index += 1
     end
     if game_finished?
-      return score
+      score
     end
   end
+
+  private
 
   def score
     @total_score = 0
@@ -90,5 +59,31 @@ class Game
       @total_score -= @frames[10].sum_pins
     end
     return @total_score
+  end
+
+  def new_frame?
+    @roll_index.even?
+  end
+
+  def game_finished?
+    if @frames.length > 10
+      true
+    elsif @frames.length == 10 && @frames.last.sum_pins != 10
+      true
+    else
+      false
+    end
+  end
+
+  def bonus_strike?
+    @frames.length == 10 && @frames.last.is_strike? ? true :  false
+  end
+
+  def bonus_spare?
+    @frames.length == 10 && @frames.last.is_spare? ? true :  false
+  end
+
+  def is_regular_strike?(pins)
+    new_frame? && pins == 10 && @frames.length < 10 ? true : false
   end
 end

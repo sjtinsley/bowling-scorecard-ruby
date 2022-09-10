@@ -1,3 +1,6 @@
+## Instructions
+
+
 Bowling Challenge in Ruby
 =================
 
