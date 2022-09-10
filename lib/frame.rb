@@ -22,6 +22,10 @@ attr_reader :frame_rolls
   end
 
   def is_strike?
-    @frame_rolls.first == 10
+    @frame_rolls.first == 10 && @frame_rolls.length == 1
+  end
+
+  def zero_frame
+    @frame_rolls << 0
   end
 end
