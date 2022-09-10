@@ -52,7 +52,7 @@ class Game
       @frame = frame.new
       @frame.add_roll(pins)
       @roll_index += 1
-    elsif bonus_strike?g
+    elsif bonus_strike?
       @frame.add_roll(pins)
       @frames << @frame
     elsif bonus_spare?
@@ -69,7 +69,6 @@ class Game
       @roll_index += 1
     end
     if game_finished?
-      2.times { add_empty_frame}
       return score
     end
   end
