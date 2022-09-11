@@ -1,5 +1,5 @@
-## Instructions
-
+## How To Run
+To use the scorecard, you need to run the game.rb file. Naivgate to the lib folder in your terminal and run the command  `ruby game.rb`. You will be prompted to enter the score for each roll, and at the end of the game your total score will be calculated.
 
 Bowling Challenge in Ruby
 =================
